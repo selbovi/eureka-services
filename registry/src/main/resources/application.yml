@@ -1,0 +1,29 @@
+server:
+  port: 8761
+
+---
+eureka:
+  client:
+    registerWithEureka: false
+    fetch-registry: false
+  server:
+    wait-time-in-ms-when-sync-empty: 0
+    #чистить отвалившиеся абоненты
+    enable-self-preservation: false
+
+#отключить авторизацию актуатора
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: REGISTRY-SERVER
+  #красиво выводить response
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+logging:
+  level:
+    com.netflix.eureka: debug

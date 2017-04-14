@@ -1,0 +1,34 @@
+#порт
+server:
+  port: 8082
+
+eureka:
+  #оповещение доступности
+  client:
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    #после промежутка выкидывать из реестра
+    lease-expiration-duration-in-seconds: 10
+    # принудить реестр обновить информацию об окружении
+    leaseRenewalIntervalInSeconds: 25
+
+
+spring:
+  application:
+    name: facade
+  #красиво выводить response
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+#отключить авторизацию актуатора
+management:
+  security:
+    enabled: false
+
+logging:
+  level:
+    com.netflix.eureka: debug
