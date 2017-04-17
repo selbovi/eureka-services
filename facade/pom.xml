@@ -27,4 +27,8 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>facade</finalName>
+    </build>
 </project>
